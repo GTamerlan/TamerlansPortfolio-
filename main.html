@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamerlan's Portfolio</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background-color: black; /* Set the body background color to black */
+        }
+        .hero-section {
+            height: 100vh;
+            background: linear-gradient(45deg, #000, #333, #444);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .hero-section h1 {
+            font-size: 3em;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .arrow {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 40px;
+            cursor: pointer;
+            animation: bounce 2s infinite;
+        }
+        .mars-world {
+            height: 100vh;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: black; /* Ensure the background of mars-world is black */
+            position: relative;
+        }
+        /* Sidebar styles */
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 250px;
+            height: 100%;
+            background: #111;
+            padding: 20px;
+            color: white;
+            transition: transform 0.3s ease;
+        }
+        .sidebar.hidden {
+            transform: translateX(-250px);
+        }
+        .toggle-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #555;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero-section">
+        <h1>Tamerlan's Portfolio</h1>
+        <div class="arrow">&#8595;</div>
+    </div>
+
+    <div id="mars-world" class="mars-world"></div>
+
+    <div class="sidebar" id="sidebar">
+        <button class="toggle-btn" onclick="toggleSidebar()">Toggle Sidebar</button>
+        <h2>Menu</h2>
+        <ul>
+            <li>About</li>
+            <li>Projects</li>
+            <li>Contact</li>
+        </ul>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+
+    <script>
+        document.querySelector('.arrow').addEventListener('click', () => {
+            document.querySelector('#mars-world').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>

@@ -3,13 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cosmic Environment</title>
+    <title>Tamerlan's Portfolio</title>
     <style>
-        body { margin: 0; }
-        canvas { display: block; } /* Ensure the canvas covers the entire screen */
+        body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden; /* Hide vertical scrollbar */
+    font-family: 'Arial', sans-serif;
+    scroll-behavior: smooth; /* This enables smooth scrolling */
+}
+
+        #landing {
+            height: 100vh;
+            background-color: black;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        #landing h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        #landing button {
+            padding: 1rem 2rem;
+            background-color: #6200ea;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #landing button:hover {
+            background-color: #3700b3;
+        }
+
+        /* Sidebar Styles */
+        #menuIcon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2rem;
+            color: white;
+            cursor: pointer;
+            z-index: 10; /* Ensure it's on top of everything */
+        }
+
+        #sidebar {
+    position: fixed;
+    top: 0;
+    right: -350px;
+    width: 300px;
+    height: 100%;
+    background-color: black;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: right 0.3s ease;
+    z-index: 5; /* Keep it below menuIcon but above world */
+    overflow-y: hidden; /* Ensures no scrollbar in the sidebar */
+        }
+
+        #sidebar a {
+            color: white;
+            font-size: 1.5rem;
+            text-decoration: none;
+            margin-bottom: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        #sidebar a:hover {
+            color: #6200ea;
+        }
+
+        /* Hide the sidebar when closed */
+        #sidebar.open {
+            right: 0;
+        }
+
+        /* Mars World Section (for demonstration, adjust to your Mars scene) */
+        #marsWorld {
+            height: 0vh;
+            background-color: #1a1a1a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+
+        #marsWorld h2 {
+            color: white;
+            font-size: 2.5rem;
+        }
     </style>
 </head>
 <body>
-    <script type="module" src="/src/main.js"></script>
+
+    <!-- Landing Page -->
+    <div id="landing">
+        <h1>Hey, I'm Tamerlan, Explore My World</h1>
+        <button id="exploreButton">Explore My World</button>
+    </div>
+
+    <!-- Menu Icon (Three lines) -->
+    <div id="menuIcon">☰</div>
+
+    <!-- Sidebar Navigation -->
+    <div id="sidebar">
+        <a href="#" id="link-world">Tamerlans Portfolio</a>
+        <a href="#" id="link-about">About</a>
+        <a href="#" id="link-legal">Projects</a>
+        <a href="#" id="link-contact">Contact</a>
+    </div>
+
+    <!-- Mars World Section -->
+    <div id="marsWorld">
+        <h2> </h2>
+        
+    </div>
+
+    <script type="module" src="/src/main.js"></script> <!-- Load Mars World scene as soon as page loads -->
+
+    <script>
+        // Smooth scroll to Mars world section
+        const exploreButton = document.getElementById('exploreButton');
+        const marsWorld = document.getElementById('marsWorld');
+
+        exploreButton.addEventListener('click', () => {
+            marsWorld.scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Sidebar toggle functionality
+        const menuIcon = document.getElementById('menuIcon');
+        const sidebar = document.getElementById('sidebar');
+        menuIcon.addEventListener('click', () => {
+            sidebar.classList.toggle('open'); // Toggle sidebar visibility
+        });
+
+        // Sidebar link actions (Placeholder for now)
+        const linkWorld = document.getElementById('link-world');
+        linkWorld.addEventListener('click', () => {
+            marsWorld.scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
 </body>
 </html>
