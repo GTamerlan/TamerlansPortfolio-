@@ -1,12 +1,12 @@
-
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+import { AudioLoader, AudioListener, PositionalAudio } from 'three';
 
 var clock = new THREE.Clock(); // Create a clock to track delta time
 var mixer; // Animation mixer to control animations
 const gltfLoader = new GLTFLoader();
-let scene, camera, renderer, controls, marsBase, roverModel, roverAction;
+let scene, camera, renderer, controls, marsBase, roverModel, roverAction, roverSound;
 let isDragging = false; // Track if the user is dragging the mouse
 let isMouseDown = false; // Track if the mouse is currently held down
 let rotationSpeed = 0.002; // Speed at which the environment rotates
@@ -23,9 +23,6 @@ function init() {
     scene = new THREE.Scene();
 
     // Camera setup
-
-    scene.background = new THREE.Color(0x87ceeb); // Light sky blue
-
     camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     camera.position.set(1, 5, 10);
 
@@ -48,10 +45,11 @@ function init() {
     // Allow vertical rotation, but no horizontal rotation
     controls.minAzimuthAngle = 0; // Lock horizontal rotation
     controls.maxAzimuthAngle = 0; // Lock horizontal rotation
-
-    // Allow only vertical movement
     controls.minPolarAngle = Math.PI / 2.36; // Set a minimum vertical angle
     controls.maxPolarAngle = Math.PI / 2.2; // Set a maximum vertical angle
+
+    // Create the gradient skybox
+    createGradientSkybox();
 
     // Lighting setup
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.5); // Soft global light
@@ -65,6 +63,9 @@ function init() {
     directionalLight.shadow.camera.near = 0.1;
     directionalLight.shadow.camera.far = 100;
     scene.add(directionalLight);
+
+    // Audio setup for the rover
+    setupAudio();
 
     // Load the Mars terrain and rover model
     createMarsTerrain();
@@ -82,6 +83,59 @@ function init() {
     document.addEventListener('mouseup', onMouseUp);
 }
 
+// Setup rover sound using AudioListener and PositionalAudio
+function setupAudio() {
+    const listener = new AudioListener();
+    camera.add(listener); // Attach the listener to the camera
+
+    roverSound = new PositionalAudio(listener);
+    const audioLoader = new AudioLoader();
+
+    // Load the audio file (replace the URL with your preferred sound file later)
+    /*
+    audioLoader.load('./roversound.mp3', (buffer) => {
+        roverSound.setBuffer(buffer);
+        roverSound.setLoop(true);
+        roverSound.setVolume(8); // Lower volume for ambient sound effect
+    });
+    */
+}
+
+// Create a gradient skybox that resembles a Martian sky
+function createGradientSkybox() {
+    const skyGeometry = new THREE.SphereGeometry(500, 60, 40);
+    const skyMaterial = new THREE.ShaderMaterial({
+        uniforms: {
+            topColor: { value: new THREE.Color(0xffb999) }, // Light sky blue
+            bottomColor: { value: new THREE.Color(0xfff9e0) }, // Soft yellow for horizon
+            offset: { value: 33 },
+            exponent: { value: 0.6 }
+        },
+        vertexShader: `
+            varying vec3 vWorldPosition;
+            void main() {
+                vec4 worldPosition = modelMatrix * vec4(position, 1.0);
+                vWorldPosition = worldPosition.xyz;
+                gl_Position = projectionMatrix * viewMatrix * worldPosition;
+            }
+        `,
+        fragmentShader: `
+            uniform vec3 topColor;
+            uniform vec3 bottomColor;
+            uniform float offset;
+            uniform float exponent;
+            varying vec3 vWorldPosition;
+            void main() {
+                float h = normalize(vWorldPosition + offset).y;
+                gl_FragColor = vec4(mix(bottomColor, topColor, max(pow(max(h, 0.0), exponent), 0.0)), 1.0);
+            }
+        `,
+        side: THREE.BackSide
+    });
+    const sky = new THREE.Mesh(skyGeometry, skyMaterial);
+    scene.add(sky);
+}
+
 // Handle mouse down event to start dragging and trigger rover animation
 function onMouseDown(event) {
     isMouseDown = true; // Mark the mouse as being held down
@@ -91,6 +145,9 @@ function onMouseDown(event) {
     // Resume the rover animation by setting timeScale to 1 (normal speed)
     if (roverAction) {
         roverAction.timeScale = 2.2; // Resume the animation
+        if (!roverSound.isPlaying) {
+            roverSound.play(); // Play the sound when the rover starts moving
+        }
     }
 }
 
@@ -110,9 +167,12 @@ function onMouseUp() {
     isDragging = false; // Stop dragging
     mouseDeltaX = 0; // Reset the mouse delta when dragging stops
 
-    // Pause the rover animation by setting timeScale to 0
+    // Pause the rover animation and stop the sound
     if (roverAction) {
         roverAction.timeScale = 0; // Pause the animation
+        if (roverSound.isPlaying) {
+            roverSound.stop(); // Stop the sound when the rover stops moving
+        }
     }
 }
 
@@ -126,9 +186,9 @@ function createMarsTerrain() {
         let circle = marsBase.getObjectByName('Circle_1');
 
         // Create different materials
-        const landscapeMaterial = new THREE.MeshStandardMaterial({ color: 0xb9a4f1 }); // Terrain color
-        const planeMaterial = new THREE.MeshStandardMaterial({ color: 0xcdf5ff }); // Lake color
-        const circleMaterial = new THREE.MeshStandardMaterial({ color: 0xcacaca }); // Road color
+        const landscapeMaterial = new THREE.MeshStandardMaterial({ color: 0xe39796}); // Terrain color
+        const planeMaterial = new THREE.MeshStandardMaterial({ color: 0xe39796 }); // Lake color
+        const circleMaterial = new THREE.MeshStandardMaterial({ color: 0x474747 }); // Road color
 
         // Apply the materials to the corresponding meshes
         if (landscape) landscape.material = landscapeMaterial;
@@ -164,6 +224,7 @@ function createBlueCube() {
         roverModel.position.set(0.4, 0.7, 8.3); // Adjust y-position as necessary
 
         // Add the rover model to the scene
+        roverModel.add(roverSound); // Attach the sound to the rover
         scene.add(roverModel);
 
         // Initialize the animation mixer for animations
@@ -180,7 +241,6 @@ function createBlueCube() {
 
     // Enhance lighting with additional lights for the rover
     addRoverLighting();
-    
 }
 
 // Add additional lighting to highlight the rover
@@ -188,45 +248,28 @@ function addRoverLighting() {
     const pointLight = new THREE.PointLight(0x1942ff, 200, 300);
     pointLight.position.set(-5, 2, 0);
     pointLight.castShadow = true;
-    scene.add(pointLight);
 
-
-
-    const pointLight1 = new THREE.PointLight(0x199dff, 200, 300);
-    pointLight1.position.set(5, 4, 6);
-    pointLight1.castShadow = true;
-    scene.add(pointLight1);
+    const pointLight3 = new THREE.PointLight(0xfff189, 28, 300);
+    pointLight3.position.set(0.4, 3, 8.3);
+    pointLight3.castShadow = true;
+    scene.add(pointLight3);
 
     const spotLight = new THREE.SpotLight(0x2cc1f9, 100, 50);
     spotLight.position.set(5, 10, 5);
     spotLight.angle = Math.PI / 6;
     spotLight.penumbra = 0.5;
     spotLight.decay = 2;
-    spotLight.distance = 100;
+    spotLight.distance = 2;
     spotLight.castShadow = true;
 
-
-    const spotLight1 = new THREE.SpotLight(0x4561e0, 100, 50);
-    spotLight1.position.set(5, 2, 5);
-    spotLight1.angle = Math.PI / 6;
-    spotLight1.penumbra = 0.5;
-    spotLight1.decay = 2;
-    spotLight1.distance = 20;
-    spotLight1.castShadow = true;
-
-
-
-    //scene.add(spotLight);
-    //scene.add(spotLight1);
-    //scene.add(pointLight);
-    //scene.add(pointLight1);
+    scene.add(spotLight);
 }
 
 // Rotate the entire environment around the rover based on mouse movement
 function rotateEnvironment() {
     if (marsBase) {
         // Apply inertia to smooth out the rotation after dragging stops
-        inertia *= 0.95; // Gradually reduce inertia
+        inertia *= 0.92; // Gradually reduce inertia
         rotationAngle += inertia; // Apply inertia to the rotation angle
 
         // Apply rotation to the environment (marsBase) around the Y-axis
