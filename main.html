@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,8 +11,10 @@
             padding: 0;
             height: 100%;
             font-family: Arial, sans-serif;
-            background-color: black; /* Set the body background color to black */
+            scroll-behavior: smooth;
         }
+
+        /* Hero Section */
         .hero-section {
             height: 100vh;
             background: linear-gradient(45deg, #000, #333, #444);
@@ -20,11 +23,14 @@
             align-items: center;
             justify-content: center;
             position: relative;
+            overflow: hidden;
         }
+
         .hero-section h1 {
-            font-size: 3em;
+            font-size: 4em;
             animation: fadeIn 2s ease-in-out;
         }
+
         .arrow {
             position: absolute;
             bottom: 20px;
@@ -34,79 +40,239 @@
             cursor: pointer;
             animation: bounce 2s infinite;
         }
-        .mars-world {
-            height: 100vh;
-            width: 100%;
-            margin: 0;
-            padding: 0;
-            background-color: black; /* Ensure the background of mars-world is black */
-            position: relative;
+
+        /* Portfolio Section */
+        .portfolio-section {
+            background: #f4f4f4;
+            padding: 80px 0;
         }
-        /* Sidebar styles */
+
+        .portfolio-section h2 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 0 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .portfolio-item {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .portfolio-item:hover {
+            transform: scale(1.05);
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .portfolio-item h3 {
+            margin: 20px;
+        }
+
+        .portfolio-item p {
+            margin: 20px;
+            font-size: 16px;
+            color: #555;
+        }
+
+        /* Sidebar */
         .sidebar {
             position: fixed;
-            left: 0;
             top: 0;
+            left: 0;
             width: 250px;
             height: 100%;
             background: #111;
             padding: 20px;
             color: white;
             transition: transform 0.3s ease;
+            z-index: 1000;
         }
-        .sidebar.hidden {
-            transform: translateX(-250px);
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
         }
-        .toggle-btn {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            background-color: #555;
+
+        .sidebar ul li {
+            margin-bottom: 20px;
+        }
+
+        .sidebar ul li a {
             color: white;
-            padding: 10px;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        .sidebar ul li a:hover {
+            color: #3498db;
+        }
+
+        /* About Section */
+        .about-section {
+            background: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .about-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .about-section p {
+            font-size: 18px;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: #333;
+            padding: 80px 0;
+            color: white;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .contact-section form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-section input, .contact-section textarea {
+            padding: 15px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .contact-section button {
+            padding: 15px;
+            background: #3498db;
+            color: white;
             border: none;
             cursor: pointer;
+            transition: background 0.3s;
         }
+
+        .contact-section button:hover {
+            background: #2980b9;
+        }
+
         /* Animations */
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
+
         @keyframes bounce {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+            50% { transform: translateY(-5px); }
         }
+
     </style>
 </head>
+
 <body>
-    <div class="hero-section">
-        <h1>Tamerlan's Portfolio</h1>
-        <div class="arrow">&#8595;</div>
-    </div>
-
-    <div id="mars-world" class="mars-world"></div>
-
+    <!-- Sidebar -->
     <div class="sidebar" id="sidebar">
-        <button class="toggle-btn" onclick="toggleSidebar()">Toggle Sidebar</button>
-        <h2>Menu</h2>
+        <h2>Navigation</h2>
         <ul>
-            <li>About</li>
-            <li>Projects</li>
-            <li>Contact</li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
     </div>
 
-    <script type="module" src="/src/main.js"></script>
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <h1>Welcome to Tamerlan's Portfolio</h1>
+        <div class="arrow">&#8595;</div>
+    </div>
+
+    <!-- Portfolio Section -->
+    <div id="portfolio" class="portfolio-section">
+        <h2>My Projects</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <img src="https://via.placeholder.com/300x200" alt="Project 1">
+                <h3>3D Chess Board</h3>
+                <p>An automated chess board using Raspberry Pi and stepper motors.</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://via.placeholder.com/300x200" alt="Project 2">
+                <h3>Mars Rover Simulation</h3>
+                <p>A fully interactive 3D Mars Rover simulation with terrain exploration.</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://via.placeholder.com/300x200" alt="Project 3">
+                <h3>Engineering Robotics</h3>
+                <p>Engineering-related robotics projects, featuring automated systems.</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://via.placeholder.com/300x200" alt="Project 4">
+                <h3>Machine Learning Speech Aid</h3>
+                <p>A device to help those with motor neuron disease communicate.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div id="about" class="about-section">
+        <h2>About Me</h2>
+        <p>
+            I'm a high school student passionate about space, engineering, and creating innovative technology. I specialize in developing projects using Three.js, Raspberry Pi, and robotics. I am also exploring ways to help individuals with motor neuron diseases through my projects.
+        </p>
+    </div>
+
+    <!-- Contact Section -->
+    <div id="contact" class="contact-section">
+        <h2>Contact Me</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
 
     <script>
+        // Smooth scroll to portfolio section
         document.querySelector('.arrow').addEventListener('click', () => {
-            document.querySelector('#mars-world').scrollIntoView({ behavior: 'smooth' });
+            document.querySelector('#portfolio').scrollIntoView({ behavior: 'smooth' });
         });
 
+        // Sidebar toggle function
         function toggleSidebar() {
             const sidebar = document.getElementById('sidebar');
             sidebar.classList.toggle('hidden');
         }
     </script>
 </body>
+
 </html>

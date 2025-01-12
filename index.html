@@ -4,26 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tamerlan's Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet"> <!-- Import Inter font -->
     <style>
         body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    overflow-x: hidden;
-    overflow-y: hidden; /* Hide vertical scrollbar */
-    font-family: 'Arial', sans-serif;
-    scroll-behavior: smooth; /* This enables smooth scrolling */
-}
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow-x: hidden;
+            overflow-y: hidden;
+            font-family: 'Inter', sans-serif; /* Apply Inter font globally */
+            scroll-behavior: smooth;
+            background-color: black;
+            color: white;
+        }
 
         #landing {
             height: 100vh;
             background-color: black;
-            color: white;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
+            position: relative;
         }
 
         #landing h1 {
@@ -32,20 +35,23 @@
         }
 
         #landing button {
-            padding: 1rem 2rem;
-            background-color: #6200ea;
-            color: white;
+            padding: 0.8rem 2rem;
+            background-color: white;
+            color: black;
             border: none;
-            border-radius: 50px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         #landing button:hover {
-            background-color: #3700b3;
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
         }
 
-        /* Sidebar Styles */
         #menuIcon {
             position: absolute;
             top: 20px;
@@ -53,24 +59,24 @@
             font-size: 2rem;
             color: white;
             cursor: pointer;
-            z-index: 10; /* Ensure it's on top of everything */
+            z-index: 10;
         }
 
         #sidebar {
-    position: fixed;
-    top: 0;
-    right: -350px;
-    width: 300px;
-    height: 100%;
-    background-color: black;
-    color: white;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    transition: right 0.3s ease;
-    z-index: 5; /* Keep it below menuIcon but above world */
-    overflow-y: hidden; /* Ensures no scrollbar in the sidebar */
+            position: fixed;
+            top: 0;
+            right: -350px;
+            width: 300px;
+            height: 100%;
+            background-color: black;
+            color: white;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            transition: right 0.3s ease;
+            z-index: 5;
+            overflow-y: hidden;
         }
 
         #sidebar a {
@@ -85,12 +91,10 @@
             color: #6200ea;
         }
 
-        /* Hide the sidebar when closed */
         #sidebar.open {
             right: 0;
         }
 
-        /* Mars World Section (for demonstration, adjust to your Mars scene) */
         #marsWorld {
             height: 0vh;
             background-color: #1a1a1a;
@@ -104,6 +108,53 @@
         #marsWorld h2 {
             color: white;
             font-size: 2.5rem;
+        }
+
+        #rotationTextContainer {
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    #rotationText {
+        color: white;
+        font-size: 20px;
+        font-weight: 300;
+        text-transform: capitalize;
+        letter-spacing: 2px;
+        margin-bottom: 1rem;
+    }
+
+    #rotationLinkButton {
+        padding: 0.8rem 2rem;
+        background-color: #6200ea;
+        color: white;
+        border: none;
+        border-radius: 25px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    #rotationLinkButton:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+
+        @keyframes popUp {
+            0% {
+                transform: translate(-50%, -50%) scale(0); /* Start completely hidden */
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(1.1); /* Slightly larger for pop effect */
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(1); /* Final normal size */
+            }
         }
     </style>
 </head>
@@ -120,7 +171,7 @@
 
     <!-- Sidebar Navigation -->
     <div id="sidebar">
-        <a href="#" id="link-world">Tamerlans Portfolio</a>
+        <a href="#" id="link-world">Tamerlan's Portfolio</a>
         <a href="#" id="link-about">About</a>
         <a href="#" id="link-legal">Projects</a>
         <a href="#" id="link-contact">Contact</a>
@@ -128,11 +179,14 @@
 
     <!-- Mars World Section -->
     <div id="marsWorld">
-        <h2> </h2>
-        
+        <h2></h2>
     </div>
+    <div id="rotationTextContainer">
+    <div id="rotationText"></div>
+    <button id="rotationLinkButton" style="display: none;">Learn More</button>
+</div>
 
-    <script type="module" src="/src/main.js"></script> <!-- Load Mars World scene as soon as page loads -->
+    <script type="module" src="/src/main.js"></script>
 
     <script>
         // Smooth scroll to Mars world section
@@ -147,7 +201,7 @@
         const menuIcon = document.getElementById('menuIcon');
         const sidebar = document.getElementById('sidebar');
         menuIcon.addEventListener('click', () => {
-            sidebar.classList.toggle('open'); // Toggle sidebar visibility
+            sidebar.classList.toggle('open');
         });
 
         // Sidebar link actions (Placeholder for now)
