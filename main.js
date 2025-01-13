@@ -1,9 +1,10 @@
-import * as THREE from 'three';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
-import { AudioLoader, AudioListener, PositionalAudio } from 'three';
-import { CSM } from 'three/examples/jsm/csm/CSM.js';
-import { CSMHelper } from 'three/examples/jsm/csm/CSMHelper.js';
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.168.0/build/three.module.js';
+import { GLTFLoader } from 'https://cdn.jsdelivr.net/npm/three@0.168.0/examples/jsm/loaders/GLTFLoader.js';
+import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.168.0/examples/jsm/controls/OrbitControls.js';
+import { AudioLoader, AudioListener, PositionalAudio } from 'https://cdn.jsdelivr.net/npm/three@0.168.0/build/three.module.js';
+import { CSM } from 'https://cdn.jsdelivr.net/npm/three@0.168.0/examples/jsm/csm/CSM.js';
+import { CSMHelper } from 'https://cdn.jsdelivr.net/npm/three@0.168.0/examples/jsm/csm/CSMHelper.js';
+
 
 var clock = new THREE.Clock(); // Create a clock to track delta time
 var mixer; // Animation mixer to control animations
