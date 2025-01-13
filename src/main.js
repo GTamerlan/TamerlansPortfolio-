@@ -380,7 +380,7 @@ function onMouseUp() {
 
 // Create the Mars terrain and environment
 function createMarsTerrain() {
-    gltfLoader.load('./myterrain/terrain.gltf', (gltfScene) => {
+    gltfLoader.load('./dist/myterrain/terrain.gltf', (gltfScene) => {
         marsBase = gltfScene.scene;
         
 
@@ -445,7 +445,7 @@ function createMarsTerrain() {
 // Create the Mars Rover model and set up animations
 function createBlueCube() {
     // Load the Mars Rover model
-    gltfLoader.load('./Rover/rover.gltf', (gltfScene) => {
+    gltfLoader.load('./dist/Rover/rover.gltf', (gltfScene) => {
         roverModel = gltfScene.scene;
 
         // Scale down the Mars Rover model to make it smaller
@@ -561,7 +561,7 @@ function animateLights() {
     if (!animateLights.modelLoaded) {
         const loader = new GLTFLoader();
         loader.load(
-            './low_poly_satellite/scene.gltf', // Replace with your model path
+            './dist/low_poly_satellite/scene.gltf', // Replace with your model path
             (gltf) => {
                 const customModel = gltf.scene;
 
