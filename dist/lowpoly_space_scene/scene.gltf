@@ -1,0 +1,784 @@
+{
+  "accessors": [
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 648,
+      "max": [
+        0.9566299915313721,
+        1.0,
+        0.9679499864578247
+      ],
+      "min": [
+        -1.0,
+        -0.9554200172424316,
+        -1.0
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 7776,
+      "componentType": 5126,
+      "count": 648,
+      "max": [
+        0.9531847834587097,
+        0.9846495389938354,
+        0.957489550113678
+      ],
+      "min": [
+        -0.9854128956794739,
+        -0.982177197933197,
+        -0.9877862334251404
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 648,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 15552,
+      "componentType": 5126,
+      "count": 210,
+      "max": [
+        1.059689998626709,
+        1.0,
+        0.8944299817085266
+      ],
+      "min": [
+        -1.0,
+        -0.9510599970817566,
+        -0.5257400274276733
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 18072,
+      "componentType": 5126,
+      "count": 210,
+      "max": [
+        0.9936690330505371,
+        0.9846500158309937,
+        0.8401309847831726
+      ],
+      "min": [
+        -0.9846495389938354,
+        -0.9433836936950684,
+        -0.563060998916626
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 2592,
+      "componentType": 5125,
+      "count": 210,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 20592,
+      "componentType": 5126,
+      "count": 102,
+      "max": [
+        0.6708199977874756,
+        0.30900999903678894,
+        1.0
+      ],
+      "min": [
+        -0.44721001386642456,
+        -0.8090100288391113,
+        -1.0
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 21816,
+      "componentType": 5126,
+      "count": 102,
+      "max": [
+        0.6070581078529358,
+        0.1559508740901947,
+        0.9877862334251404
+      ],
+      "min": [
+        -0.37023207545280457,
+        -0.7049269080162048,
+        -0.9877862334251404
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 3432,
+      "componentType": 5125,
+      "count": 102,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 23040,
+      "componentType": 5126,
+      "count": 960,
+      "max": [
+        1.3348000049591064,
+        1.4281500577926636,
+        1.17917001247406
+      ],
+      "min": [
+        -1.2965099811553955,
+        -1.3680800199508667,
+        -1.190269947052002
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 34560,
+      "componentType": 5126,
+      "count": 960,
+      "max": [
+        0.9846495389938354,
+        0.9846500158309937,
+        0.9984775185585022
+      ],
+      "min": [
+        -0.9854128956794739,
+        -0.9998696446418762,
+        -0.9897909760475159
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 3840,
+      "componentType": 5125,
+      "count": 960,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 46080,
+      "componentType": 5126,
+      "count": 852,
+      "max": [
+        0.966189980506897,
+        1.0099999904632568,
+        1.0099999904632568
+      ],
+      "min": [
+        -0.966189980506897,
+        -0.9649800062179565,
+        -1.0099999904632568
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 56304,
+      "componentType": 5126,
+      "count": 852,
+      "max": [
+        0.9945006966590881,
+        0.9887428283691406,
+        0.9954351186752319
+      ],
+      "min": [
+        -0.9928519129753113,
+        -0.9909067153930664,
+        -0.9877862334251404
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 7680,
+      "componentType": 5125,
+      "count": 852,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 66528,
+      "componentType": 5126,
+      "count": 108,
+      "max": [
+        0.966189980506897,
+        0.44727998971939087,
+        0.9776300191879272
+      ],
+      "min": [
+        -0.850380003452301,
+        -1.0099999904632568,
+        -0.6640899777412415
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 67824,
+      "componentType": 5126,
+      "count": 108,
+      "max": [
+        0.9531847834587097,
+        0.3046190142631531,
+        0.96392422914505
+      ],
+      "min": [
+        -0.7976293563842773,
+        -0.9846483469009399,
+        -0.5158317685127258
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 11088,
+      "componentType": 5125,
+      "count": 108,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 90,
+      "max": [
+        3.0
+      ],
+      "min": [
+        0.033330000936985016
+      ],
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 90,
+      "max": [
+        0.0,
+        0.0,
+        0.9998400211334229,
+        1.0
+      ],
+      "min": [
+        0.0,
+        0.0,
+        -0.9998400211334229,
+        0.017650000751018524
+      ],
+      "type": "VEC4"
+    }
+  ],
+  "animations": [
+    {
+      "channels": [
+        {
+          "sampler": 0,
+          "target": {
+            "node": 13,
+            "path": "rotation"
+          }
+        }
+      ],
+      "name": "Moon_Rotation_centerAction",
+      "samplers": [
+        {
+          "input": 18,
+          "interpolation": "LINEAR",
+          "output": 19
+        }
+      ]
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "borkia (https://sketchfab.com/borkia)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/lowpoly-space-scene-784cfbd482bc45fbb731a68a7349cdee",
+      "title": "LowPoly space scene"
+    },
+    "generator": "Sketchfab-12.67.0",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 11520,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 69120,
+      "byteOffset": 11520,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 360,
+      "byteOffset": 80640,
+      "name": "floatBufferViews"
+    },
+    {
+      "buffer": 0,
+      "byteLength": 1440,
+      "byteOffset": 81000,
+      "byteStride": 16,
+      "name": "floatBufferViews"
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 82440,
+      "uri": "scene.bin"
+    }
+  ],
+  "extensionsRequired": [
+    "KHR_materials_pbrSpecularGlossiness"
+  ],
+  "extensionsUsed": [
+    "KHR_materials_pbrSpecularGlossiness"
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "extensions": {
+        "KHR_materials_pbrSpecularGlossiness": {
+          "diffuseFactor": [
+            0.2019596836,
+            0.1868857543,
+            0.1868857543,
+            1.0
+          ],
+          "glossinessFactor": 0.6507240854,
+          "specularFactor": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      },
+      "name": "Moon"
+    },
+    {
+      "doubleSided": true,
+      "extensions": {
+        "KHR_materials_pbrSpecularGlossiness": {
+          "diffuseFactor": [
+            0.0432658617,
+            0.0432658617,
+            0.0432658617,
+            1.0
+          ],
+          "glossinessFactor": 1.0,
+          "specularFactor": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      },
+      "name": "Moon_dark_spots"
+    },
+    {
+      "doubleSided": true,
+      "emissiveFactor": [
+        1.0,
+        0.39383206657299685,
+        0.00855596801349621
+      ],
+      "extensions": {
+        "KHR_materials_pbrSpecularGlossiness": {
+          "diffuseFactor": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "glossinessFactor": 0.9129192073,
+          "specularFactor": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      },
+      "name": "Material.002"
+    },
+    {
+      "doubleSided": true,
+      "extensions": {
+        "KHR_materials_pbrSpecularGlossiness": {
+          "diffuseFactor": [
+            0.000816788,
+            0.0080563911,
+            0.0950371922,
+            1.0
+          ],
+          "glossinessFactor": 0.6053734756,
+          "specularFactor": [
+            0.0204373144,
+            0.0360156184,
+            0.864824582
+          ]
+        }
+      },
+      "name": "material"
+    },
+    {
+      "doubleSided": true,
+      "extensions": {
+        "KHR_materials_pbrSpecularGlossiness": {
+          "diffuseFactor": [
+            0.0020578816,
+            0.1542627969,
+            0.0,
+            1.0
+          ],
+          "glossinessFactor": 0.5287728658999999,
+          "specularFactor": [
+            0.004394874,
+            0.2527695293,
+            0.0084369787
+          ]
+        }
+      },
+      "name": "Land"
+    },
+    {
+      "doubleSided": true,
+      "extensions": {
+        "KHR_materials_pbrSpecularGlossiness": {
+          "diffuseFactor": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "glossinessFactor": 0.8553734756,
+          "specularFactor": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      },
+      "name": "material_5"
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Earth_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0
+          },
+          "indices": 2,
+          "material": 3,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Earth_1",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 4,
+            "POSITION": 3
+          },
+          "indices": 5,
+          "material": 4,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Earth_2",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 7,
+            "POSITION": 6
+          },
+          "indices": 8,
+          "material": 5,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Sun_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 10,
+            "POSITION": 9
+          },
+          "indices": 11,
+          "material": 2,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Moon_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 13,
+            "POSITION": 12
+          },
+          "indices": 14,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Moon_1",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 16,
+            "POSITION": 15
+          },
+          "indices": 17,
+          "material": 1,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "matrix": [
+        0.5030340552330017,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.1169599805804824e-16,
+        -0.5030340552330017,
+        0.0,
+        0.0,
+        0.5030340552330017,
+        1.1169599805804824e-16,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Sketchfab_model"
+    },
+    {
+      "children": [
+        2,
+        11,
+        13
+      ],
+      "name": "Root"
+    },
+    {
+      "children": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "name": "Earth"
+    },
+    {
+      "mesh": 0,
+      "name": "Earth_0"
+    },
+    {
+      "mesh": 1,
+      "name": "Earth_1"
+    },
+    {
+      "mesh": 2,
+      "name": "Earth_2"
+    },
+    {
+      "children": [
+        7,
+        9
+      ],
+      "matrix": [
+        1.54059,
+        -1.48507,
+        0.30699000000000004,
+        0.0,
+        1.50264,
+        1.55391,
+        -0.023720000000000005,
+        0.0,
+        -0.20438,
+        0.2303,
+        2.1397,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "loght_rig"
+    },
+    {
+      "children": [
+        8
+      ],
+      "matrix": [
+        -0.04780000000000001,
+        0.45922,
+        -0.028750000000000005,
+        0.0,
+        -0.16654000000000005,
+        0.009680000000000003,
+        0.43146000000000007,
+        0.0,
+        0.4289200000000001,
+        0.054930000000000014,
+        0.16432000000000002,
+        0.0,
+        1.89356,
+        -0.11845000000000001,
+        0.3353100000000001,
+        1.0
+      ],
+      "name": "Sun.002"
+    },
+    {
+      "name": "Sun.002"
+    },
+    {
+      "children": [
+        10
+      ],
+      "matrix": [
+        0.16027000000000002,
+        -0.21865,
+        0.37483000000000005,
+        0.0,
+        0.16769000000000003,
+        0.39974000000000004,
+        0.16148000000000004,
+        0.0,
+        -0.40023,
+        0.07993000000000001,
+        0.21776000000000004,
+        0.0,
+        -3.3066099999999996,
+        -0.08364000000000002,
+        0.5389,
+        1.0
+      ],
+      "name": "Sun.001"
+    },
+    {
+      "name": "Sun.001"
+    },
+    {
+      "children": [
+        12
+      ],
+      "matrix": [
+        2.3983499999999998,
+        -2.0298599999999998,
+        0.0,
+        0.0,
+        2.0298599999999998,
+        2.3983499999999998,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        3.1420399999999997,
+        0.0,
+        -10.210069999999998,
+        5.978230000000001,
+        5.265509999999999,
+        1.0
+      ],
+      "name": "Sun"
+    },
+    {
+      "mesh": 3,
+      "name": "Sun_0"
+    },
+    {
+      "children": [
+        14
+      ],
+      "name": "Moon_Rotation_center",
+      "rotation": [
+        0.0,
+        0.0,
+        -0.03528989851474762,
+        0.9993771314620972
+      ],
+      "translation": [
+        0.0,
+        0.0,
+        1.1001700162887573
+      ]
+    },
+    {
+      "children": [
+        15,
+        16
+      ],
+      "matrix": [
+        0.45595,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.45595,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.45595,
+        0.0,
+        -0.7633400000000001,
+        -2.67092,
+        -1.10017,
+        1.0
+      ],
+      "name": "Moon"
+    },
+    {
+      "mesh": 4,
+      "name": "Moon_0"
+    },
+    {
+      "mesh": 5,
+      "name": "Moon_1"
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Sketchfab_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ]
+}

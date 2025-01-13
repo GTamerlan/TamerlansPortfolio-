@@ -1,0 +1,8 @@
+Model Information:
+* title:	NASA_Rover
+* source:	https://sketchfab.com/3d-models/nasa-rover-440f5c9f53f64b69865484f938eb4b0a
+* author:	William J. Haney (https://sketchfab.com/WilliamJHaney)
+
+Model License:
+* license type:	SKETCHFAB Editorial (https://sketchfab.com/licenses)
+* requirements:	Use only in connection with events that are newsworthy or of public interest

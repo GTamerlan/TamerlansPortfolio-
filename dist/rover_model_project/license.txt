@@ -1,0 +1,11 @@
+Model Information:
+* title:	Rover Model Project
+* source:	https://sketchfab.com/3d-models/rover-model-project-1038b1efd9904b10a6c7d26d3bcad8ee
+* author:	mshafaq (https://sketchfab.com/mshafaq)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Rover Model Project" (https://sketchfab.com/3d-models/rover-model-project-1038b1efd9904b10a6c7d26d3bcad8ee) by mshafaq (https://sketchfab.com/mshafaq) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

@@ -1,0 +1,11 @@
+Model Information:
+* title:	Showdown Environment (Brawl Stars)
+* source:	https://sketchfab.com/3d-models/showdown-environment-brawl-stars-cd52fd8a7f174e4f85f30db65be88c60
+* author:	Nomnivore (https://sketchfab.com/nomnivore)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Showdown Environment (Brawl Stars)" (https://sketchfab.com/3d-models/showdown-environment-brawl-stars-cd52fd8a7f174e4f85f30db65be88c60) by Nomnivore (https://sketchfab.com/nomnivore) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

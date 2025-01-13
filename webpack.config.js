@@ -43,6 +43,8 @@ module.exports = {
         { from: 'Rover', to: 'Rover' }, // Copy 'Rover' folder to 'dist/Rover'
         { from: 'low_poly_satellite', to: 'low_poly_satellite' }, // Copy 'low_poly_satellite' to 'dist/low_poly_satellite'
         { from: 'myterrain', to: 'myterrain' }, // Copy 'myterrain' to 'dist/myterrain'
+        { from: 'low_poly_moon', to: 'low_poly_moon' }, // Copy 'myterrain' to 'dist/myterrain'
+        { from: 'rotunda_space_ship', to: 'rotunda_space_ship' }, // Copy 'myterrain' to 'dist/myterrain'
       ],
     }),
   ],
