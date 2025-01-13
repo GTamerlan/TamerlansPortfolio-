@@ -111,55 +111,104 @@
         }
 
         #rotationTextContainer {
-        position: absolute;
-        top: 20%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-    }
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
 
-    #rotationText {
-        color: white;
-        font-size: 20px;
-        font-weight: 300;
-        text-transform: capitalize;
-        letter-spacing: 2px;
-        margin-bottom: 1rem;
-    }
+        #rotationText {
+            color: white;
+            font-size: 20px;
+            font-weight: 300;
+            text-transform: capitalize;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
 
-    #rotationLinkButton {
-        padding: 0.8rem 2rem;
-        background-color: #b78df0;
-        color: white;
-        border: none;
-        border-radius: 25px;
-        font-size: 1rem;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
+        #rotationLinkButton {
+            padding: 0.8rem 2rem;
+            background-color: #b78df0;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
 
-    #rotationLinkButton:hover {
-        transform: scale(1.05);
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-    }
+        #rotationLinkButton:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
 
-        @keyframes popUp {
-            0% {
-                transform: translate(-50%, -50%) scale(0); /* Start completely hidden */
+        #scrollHintContainer {
+            position: fixed;
+            top: 50px; /* Move the arrows down */
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            z-index: 100;
+        }
+
+        #scrollHintText {
+            font-size: 20px;
+            font-weight: 300;
+            text-transform: capitalize;
+            letter-spacing: 2px;
+            color: white;
+        }
+
+        #scrollArrows {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 10px; /* Adds space between text and arrows */
+        }
+
+        .scrollArrow {
+            width: 15px;
+            height: 15px;
+            border: solid white;
+            border-width: 0 3px 3px 0;
+            transform: rotate(-45deg);
+            animation: moveSideToSide 1s infinite ease-in-out;
+        }
+
+        .scrollArrow:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .scrollArrow:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes moveSideToSide {
+            0%, 100% {
+                transform: rotate(-45deg) translateX(0);
             }
             50% {
-                transform: translate(-50%, -50%) scale(1.1); /* Slightly larger for pop effect */
-            }
-            100% {
-                transform: translate(-50%, -50%) scale(1); /* Final normal size */
+                transform: rotate(-45deg) translateX(10px);
             }
         }
     </style>
   <script type="module" crossorigin src="/assets/index-oYe7r0xT.js"></script>
 </head>
 <body>
+
+    <!-- Separate Pinch and Scroll Text with Arrows -->
+    <div id="scrollHintContainer">
+        <div id="scrollHintText">Pinch and Scroll your mouse to Explore my World</div>
+        <div id="scrollArrows">
+            <div class="scrollArrow"></div>
+            <div class="scrollArrow"></div>
+            <div class="scrollArrow"></div>
+        </div>
+    </div>
 
     <!-- Landing Page -->
     <div id="landing">
@@ -174,7 +223,6 @@
     <div id="sidebar">
         <a href="https://github.com/GTamerlan?tab=repositories" target="_blank" id="link-github">GitHub</a>
         <a href="https://gtamerlan.com/" target="_blank" id="link-linkedin">Personal Website</a>
-    
         <a href="https://gtamerlan.com/5/" target="_blank" id="link-contact">Contact</a>
     </div>
     
@@ -189,28 +237,27 @@
 </div>
 
 
+<script>
+    // Smooth scroll to Mars world section
+    const exploreButton = document.getElementById('exploreButton');
+    const marsWorld = document.getElementById('marsWorld');
 
-    <script>
-        // Smooth scroll to Mars world section
-        const exploreButton = document.getElementById('exploreButton');
-        const marsWorld = document.getElementById('marsWorld');
+    exploreButton.addEventListener('click', () => {
+        marsWorld.scrollIntoView({ behavior: 'smooth' });
+    });
 
-        exploreButton.addEventListener('click', () => {
-            marsWorld.scrollIntoView({ behavior: 'smooth' });
-        });
+    // Sidebar toggle functionality
+    const menuIcon = document.getElementById('menuIcon');
+    const sidebar = document.getElementById('sidebar');
+    menuIcon.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
+    });
 
-        // Sidebar toggle functionality
-        const menuIcon = document.getElementById('menuIcon');
-        const sidebar = document.getElementById('sidebar');
-        menuIcon.addEventListener('click', () => {
-            sidebar.classList.toggle('open');
-        });
-
-        // Sidebar link actions (Placeholder for now)
-        const linkWorld = document.getElementById('link-world');
-        linkWorld.addEventListener('click', () => {
-            marsWorld.scrollIntoView({ behavior: 'smooth' });
-        });
-    </script>
+    // Sidebar link actions (Placeholder for now)
+    const linkWorld = document.getElementById('link-world');
+    linkWorld.addEventListener('click', () => {
+        marsWorld.scrollIntoView({ behavior: 'smooth' });
+    });
+</script>
 </body>
 </html>
